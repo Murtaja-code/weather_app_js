@@ -3,6 +3,7 @@ import CityInfo from "../../components/CityInfo/CityInfo"
 import axios from "axios"
 import Spinner from "react-bootstrap/Spinner"
 import StatusBar from "./../../components/StatusBar/StatusBar"
+import WeeklyForecast from './../../components/ProgressBar/forecast/WeeklyForecast';
 
 export default function WeatherData() {
 	const [currentWeth, setcurrentWeth] = useState()
@@ -28,6 +29,7 @@ export default function WeatherData() {
 		}
 		requestData()
 	}, [])
+	console.log(forcasttWeth)
 
 	if (loading) {
 		return (
@@ -42,6 +44,8 @@ export default function WeatherData() {
 			{/* components come here */}
 			<StatusBar currentWeth={currentWeth} />
 			<CityInfo currentWeth={currentWeth} />
+	  		<WeeklyForecast forecastWeth={forcasttWeth} />
+
 		</div>
 	)
 }
