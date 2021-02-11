@@ -18,7 +18,6 @@ export default function WeatherData() {
 						"https://tranquil-cove-12072.herokuapp.com/https://www.metaweather.com/api/location/2487956/"
 					)
 					.then((wethData) => {
-						console.log(wethData.data)
 						setcurrentWeth(wethData.data)
 						setForcasttWeth(wethData.data)
 						setLoading(false)
