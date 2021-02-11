@@ -1,21 +1,25 @@
-import React from 'react';
-import { Row, Col, Container } from 'react-bootstrap';
+import React from "react"
+import { Row, Col, Container } from "react-bootstrap"
 
 export default function StatusBar(props) {
-  const {
-    current: { humidity, pressure, wind_degree, uv_index, visibility },
-  } = props.currentWeth;
-  return (
-    <div>
-      <Container>
-        <Row xs={2} md={4} lg={5}>
-          <Col>Humidity: {humidity}</Col>
-          <Col>Pressure: {pressure}</Col>
-          <Col>Wind: {wind_degree}</Col>
-          <Col>uv_index: {uv_index}</Col>
-          <Col>Visibility: {visibility}</Col>
-        </Row>
-      </Container>
-    </div>
-  );
+	const {
+		humidity,
+		air_pressure,
+		wind_speed,
+		predictability,
+		visibility
+	} = props.currentWeth.consolidated_weather[0]
+	return (
+		<div>
+			<Container>
+				<Row xs={2} md={4} lg={5}>
+					<Col>Humidity: {humidity}</Col>
+					<Col>Pressure: {air_pressure}</Col>
+					<Col>Wind: {wind_speed.toFixed(2)}</Col>
+					<Col>predictability: {predictability}</Col>
+					<Col>Visibility: {visibility.toFixed(2)}</Col>
+				</Row>
+			</Container>
+		</div>
+	)
 }

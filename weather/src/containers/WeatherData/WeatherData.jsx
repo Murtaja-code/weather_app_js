@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import CityInfo from "../../components/ProgressBar/CityInfo"
+import CityInfo from "../../components/CityInfo/CityInfo"
 import axios from "axios"
 import Spinner from "react-bootstrap/Spinner"
 import StatusBar from "./../../components/StatusBar/StatusBar"
@@ -14,17 +14,13 @@ export default function WeatherData() {
 		function requestData() {
 			try {
 				axios
-					.all([
-						axios.get(
-							"http://api.weatherstack.com/current?access_key=306bc2ca601a9eb579319d8b96507b0d&query=San Francisco"
-						),
-						axios.get(
-							"https://tranquil-cove-12072.herokuapp.com/https://www.metaweather.com/api/location/2487956/"
-						)
-					])
-					.then(([currentRes, foreCastRes]) => {
-						setcurrentWeth(currentRes.data)
-						setForcasttWeth(foreCastRes)
+					.get(
+						"https://tranquil-cove-12072.herokuapp.com/https://www.metaweather.com/api/location/2487956/"
+					)
+					.then((wethData) => {
+						console.log(wethData.data)
+						setcurrentWeth(wethData.data)
+						setForcasttWeth(wethData.data)
 						setLoading(false)
 					})
 			} catch (err) {
@@ -33,7 +29,6 @@ export default function WeatherData() {
 		}
 		requestData()
 	}, [])
-	console.log(currentWeth)
 
 	if (loading) {
 		return (
