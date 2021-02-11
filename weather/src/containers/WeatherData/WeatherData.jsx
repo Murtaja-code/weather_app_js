@@ -29,6 +29,7 @@ export default function WeatherData() {
 		}
 		requestData()
 	}, [])
+	console.log(forcasttWeth)
 
 	if (loading) {
 		return (
@@ -41,9 +42,9 @@ export default function WeatherData() {
 	return (
 		<div>
 			{/* components come here */}
-			{/* <StatusBar currentWeth={currentWeth} />
-			<CityInfo currentWeth={currentWeth} /> */}
-	  		<WeeklyForecast api={forcasttWeth} />
+			<StatusBar currentWeth={currentWeth} />
+			<CityInfo currentWeth={currentWeth} />
+	  		<WeeklyForecast forecastWeth={forcasttWeth} />
 
 		</div>
 	)

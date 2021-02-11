@@ -1,9 +1,9 @@
 import React from 'react';
-import ForecastTable from '../../ForecastTable';
+import ForecastTable from './ForecastTable';
 
-function WeeklyForecast({api}) {
+function WeeklyForecast({forecastWeth}) {
   return (
-   <ForecastTable api={api} />
+   <ForecastTable forecastWeth={forecastWeth} />
   );
 }
 
