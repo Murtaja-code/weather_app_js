@@ -13,10 +13,10 @@ you can see the weather forecast for the entire week detaling every important in
 
 ## How to use
 
-1-open the application link
-2-you will see a default city. search for your city.
-3-you will see today's weather for your city navigate down to see weekly forecast.
-4-navigate down to see statstical chart to describe the weather in your area.
+1-open the application link <br>
+2-you will see a default city. search for your city.<br>
+3-you will see today's weather for your city navigate down to see weekly forecast.<br>
+4-navigate down to see statstical chart to describe the weather in your area.<br>
 
 ## Technology
 
