@@ -18,7 +18,9 @@ export default function CityInfo(props) {
 					consolidated_weather[0].weather_state_abbr +
 					".svg"
 				}
-				type="image/svg+xml"></object>
+				type="image/svg+xml">
+				somthing
+			</object>
 		</div>
 	)
 }
