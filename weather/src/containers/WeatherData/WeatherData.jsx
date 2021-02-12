@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import axios from "axios"
 import CityInfo from "../../components/CityInfo/CityInfo"
-import Spinner from "react-bootstrap/Spinner"
 import StatusBar from "./../../components/StatusBar/StatusBar"
 import WeeklyForecast from "../../components/forecast/WeeklyForecast"
+import { Form, Row, Col, Button, Container, Spinner } from "react-bootstrap"
 import hr from "../../images/hr.jpg"
 import c from "../../images/c.jpg"
 import hc from "../../images/hc.jpg"
@@ -20,13 +20,15 @@ export default function WeatherData() {
 	const [forcasttWeth, setForcasttWeth] = useState()
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState()
+	const location = useRef()
+	const [woeid, setWoeid] = useState(1979455)
 
 	useEffect(() => {
 		function requestData() {
 			try {
 				axios
 					.get(
-						"https://tranquil-cove-12072.herokuapp.com/https://www.metaweather.com/api/location/2487956/"
+						`https://tranquil-cove-12072.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`
 					)
 					.then((wethData) => {
 						setcurrentWeth(wethData.data)
@@ -38,13 +40,32 @@ export default function WeatherData() {
 			}
 		}
 		requestData()
-	}, [])
+	}, [woeid])
+
+	const getLocation = (e) => {
+		e.preventDefault()
+		try {
+			axios
+				.get(
+					`https://tranquil-cove-12072.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${location.current.value}`
+				)
+
+				.then((location) => {
+					if (location.data[0] !== undefined) {
+						setWoeid(location.data[0].woeid)
+					} else {
+						alert("please type correct location!")
+					}
+				})
+		} catch (err) {
+			setError(err)
+		}
+	}
 
 	if (loading) {
 		return (
 			<div>
-				<p>{error ? error : ""}</p>
-				<Spinner animation="border" variant="primary" />
+				{error ? error : <Spinner animation="border" variant="primary" />}
 			</div>
 		)
 	}
@@ -90,11 +111,33 @@ export default function WeatherData() {
 		backgroundImage: `url(${backgroundImage()})`
 	}
 	return (
-		<div style={sectionStyle}>
+		<Container fluid={true} className="p-0" style={sectionStyle}>
 			{/* components come here */}
 			<StatusBar currentWeth={currentWeth} />
 			<CityInfo currentWeth={currentWeth} />
 			<WeeklyForecast forecastWeather={forecastData} />
-		</div>
+
+			<Form>
+				<Row noGutters className="justify-content-md-center">
+					<Col sm="2">
+						<Form.Control
+							ref={location}
+							size="sm"
+							type="search"
+							placeholder="type the city..."
+						/>
+					</Col>
+					<Col md="auto">
+						<Button
+							variant="outline-success"
+							size="sm"
+							type="submit"
+							onClick={getLocation}>
+							search
+						</Button>
+					</Col>
+				</Row>
+			</Form>
+		</Container>
 	)
 }
