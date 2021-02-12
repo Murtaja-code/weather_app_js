@@ -45,7 +45,7 @@ export default function CityInfo(props) {
 					<Col className="mt-4">
 						{' '}
 						<h4 clasName="textH4">Today</h4>
-						<h3>{consolidated_weather[0].the_temp.toFixed(2)} &#xb0;C</h3>
+						<h3>{consolidated_weather[0].the_temp.toFixed(2)} &#xb0;C</h3>{' '}
 					</Col>
 				</Row>
 			</Container>
