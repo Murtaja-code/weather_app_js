@@ -3,7 +3,7 @@ import axios from 'axios';
 import CityInfo from '../../components/CityInfo/CityInfo';
 import StatusBar from './../../components/StatusBar/StatusBar';
 import WeeklyForecast from '../../components/forecast/WeeklyForecast';
-import { Form, Row, Col, Button, Container, Spinner } from 'react-bootstrap';
+import { Row, Col, Container, Spinner } from 'react-bootstrap';
 import hr from '../../images/hr.jpg';
 import c from '../../images/c.jpg';
 import hc from '../../images/hc.jpg';
@@ -70,12 +70,35 @@ export default function WeatherData() {
 		);
 	}
 	const forecastData = forcasttWeth.consolidated_weather.map((weather, i) => (
-		<tbody key={i}>
-			<tr>
-				<td>
+		// 	<tbody key={i}>
+		// 	<tr>
+		// 		<td>
+		// 			<object
+		// 				width="30"
+		// 				height="30"
+		// 				data={
+		// 					'https://www.metaweather.com/static/img/weather/' +
+		// 					weather.weather_state_abbr +
+		// 					'.svg'
+		// 				}
+		// 				type="image/svg+xml"
+		// 			>
+		// 				somthing
+		// 			</object>
+		// 		</td>
+		// 		<td>{weather.applicable_date}</td>
+		// 		<td>{parseInt(weather.min_temp)}°C</td>
+		// 		<td>{parseInt(weather.max_temp)}°C</td>
+		// 		<td>{parseInt(weather.wind_speed)}kph</td>
+		// 	</tr>
+		// </tbody>
+		<Container className="mt-5" key={i}>
+			<Row>
+				<Col>
+					{' '}
 					<object
-						width="30"
-						height="30"
+						width="65"
+						height="65"
 						data={
 							'https://www.metaweather.com/static/img/weather/' +
 							weather.weather_state_abbr +
@@ -85,13 +108,18 @@ export default function WeatherData() {
 					>
 						somthing
 					</object>
-				</td>
-				<td>{weather.applicable_date}</td>
-				<td>{parseInt(weather.min_temp)}°C</td>
-				<td>{parseInt(weather.max_temp)}°C</td>
-				<td>{parseInt(weather.wind_speed)}kph</td>
-			</tr>
-		</tbody>
+				</Col>
+			</Row>
+			<Row className="mt-3 mb-2">
+				<Col>{parseInt(weather.min_temp)}°C</Col>
+			</Row>
+			<Row className="mt-3 mb-4">
+				<Col>{parseInt(weather.max_temp)}°C</Col>{' '}
+			</Row>
+			<Row className="mt-3 mb-5">
+				<Col>{parseInt(weather.wind_speed)} Kph</Col>{' '}
+			</Row>
+		</Container>
 	));
 
 	const backgroundImage = () => {
@@ -120,7 +148,7 @@ export default function WeatherData() {
 				<StatusBar currentWeth={currentWeth} />
 
 				<WeeklyForecast forecastWeather={forecastData} />
-				<Form>
+				{/* <Form>
 					<Row noGutters className="justify-content-md-center">
 						<Col sm="2">
 							<Form.Control
@@ -141,7 +169,7 @@ export default function WeatherData() {
 							</Button>
 						</Col>
 					</Row>
-				</Form>
+				</Form> */}
 			</Container>
 		</Container>
 	);
