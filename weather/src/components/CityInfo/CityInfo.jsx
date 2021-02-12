@@ -40,8 +40,8 @@ export default function CityInfo(props) {
 							type="image/svg+xml"
 						>
 							somthing
-						</object>{' '}
-					</Col>
+						</object>
+					</Col>{' '}
 					<Col className="mt-4">
 						{' '}
 						<h4 clasName="textH4">Today</h4>
