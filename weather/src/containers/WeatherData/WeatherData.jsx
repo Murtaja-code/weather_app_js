@@ -117,8 +117,9 @@ export default function WeatherData() {
 
 			<Container className="transbox">
 				<CityInfo currentWeth={currentWeth} />
-				<WeeklyForecast forecastWeather={forecastData} />
 				<StatusBar currentWeth={currentWeth} />
+
+				<WeeklyForecast forecastWeather={forecastData} />
 				<Form>
 					<Row noGutters className="justify-content-md-center">
 						<Col sm="2">

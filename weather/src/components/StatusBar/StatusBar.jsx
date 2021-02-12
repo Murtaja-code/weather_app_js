@@ -1,5 +1,5 @@
-import React from "react"
-import { Row, Col, Container } from "react-bootstrap"
+import React from 'react';
+import { Row, Col, Container } from 'react-bootstrap';
 
 export default function StatusBar(props) {
 	const {
@@ -7,11 +7,11 @@ export default function StatusBar(props) {
 		air_pressure,
 		wind_speed,
 		predictability,
-		visibility
-	} = props.currentWeth.consolidated_weather[0]
+		visibility,
+	} = props.currentWeth.consolidated_weather[0];
 	return (
 		<div>
-			<Container>
+			<Container className="mt-3">
 				<Row xs={2} md={4} lg={5}>
 					<Col>Humidity: {humidity}</Col>
 					<Col>Pressure: {air_pressure}</Col>
@@ -21,5 +21,5 @@ export default function StatusBar(props) {
 				</Row>
 			</Container>
 		</div>
-	)
+	);
 }
