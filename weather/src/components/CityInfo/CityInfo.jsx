@@ -1,4 +1,5 @@
 import React from "react"
+// import url from "../../images/hr.jfif"
 
 export default function CityInfo(props) {
 	const { consolidated_weather, title } = props.currentWeth
