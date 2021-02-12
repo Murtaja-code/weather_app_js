@@ -3,7 +3,7 @@ import { Container, Table } from "react-bootstrap"
 
 function WeeklyForecast({ forecastWeather }) {
 	return (
-		<div>
+		<div align="center">
 			<h3> A weekly Forecast</h3>
 			<Container>
 				<Table striped hover bordered responsive>
