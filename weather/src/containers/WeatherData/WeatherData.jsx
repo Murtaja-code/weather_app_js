@@ -74,7 +74,14 @@ export default function WeatherData() {
 	if (loading) {
 		return (
 			<div>
-				{error ? error : <Spinner animation="border" variant="primary" />}
+				{error ? (
+					error
+				) : (
+					<Spinner animation="border" className="mt-5" variant="secondary" />
+				)}
+				<h6 className="text-secondary">
+					hang on for a sec to see the best weather app!
+				</h6>
 			</div>
 		)
 	}
