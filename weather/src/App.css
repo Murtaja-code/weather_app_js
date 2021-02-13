@@ -37,12 +37,7 @@
 	}
 }
 
-html,
-body {
-	overflow: hidden;
-}
 .img {
-	display: block;
 	position: absolute;
 }
 .transbox {
@@ -51,4 +46,22 @@ body {
 	color: white;
 	opacity: 0.8;
 	filter: alpha(opacity=50);
+}
+
+.searchBtn {
+	background: #2b303b;
+	border: none;
+	float: left;
+	color: #fff;
+	padding-left: 15px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.inputSearch {
+	overflow: hidden;
+	width: 300px;
+	vertical-align: middle;
+	white-space: nowrap;
 }
