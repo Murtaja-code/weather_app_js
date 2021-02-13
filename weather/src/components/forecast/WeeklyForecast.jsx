@@ -1,5 +1,5 @@
-import React from 'react';
-import { Row, Container, Table } from 'react-bootstrap';
+import React from "react"
+import { Row, Container, Table } from "react-bootstrap"
 
 function WeeklyForecast({ forecastWeather }) {
 	return (
@@ -9,22 +9,8 @@ function WeeklyForecast({ forecastWeather }) {
 					{forecastWeather}
 				</Row>
 			</Container>
-			{/* <Container>
-				<Table striped hover bordered responsive>
-					<thead>
-						<tr>
-							<th>#</th>
-							<th>Day</th>
-							<th>Low</th>
-							<th>High</th>
-							<th>Wind</th>
-						</tr>
-					</thead>
-					{forecastWeather}
-				</Table>
-			</Container> */}
 		</div>
-	);
+	)
 }
 
-export default WeeklyForecast;
+export default WeeklyForecast

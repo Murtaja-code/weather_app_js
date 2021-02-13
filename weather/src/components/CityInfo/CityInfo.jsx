@@ -1,8 +1,8 @@
-import React from 'react';
-import { Row, Col, Container } from 'react-bootstrap';
+import React from "react"
+import { Row, Col, Container } from "react-bootstrap"
 
 export default function CityInfo(props) {
-	const { consolidated_weather, title } = props.currentWeth;
+	const { consolidated_weather, title } = props.currentWeth
 	return (
 		<div>
 			<Container>
@@ -12,15 +12,14 @@ export default function CityInfo(props) {
 						<h3>
 							{
 								(consolidated_weather[0].applicable_date = new Date().toDateString())
-							}{' '}
+							}
 						</h3>
 					</Col>
 					<Col md={{ span: 4, offset: 5 }}>
-						{' '}
 						<h3 className="mt-5">
 							{
 								(consolidated_weather[0].applicable_date = new Date().toTimeString())
-							}{' '}
+							}
 						</h3>
 					</Col>
 				</Row>
@@ -33,22 +32,20 @@ export default function CityInfo(props) {
 							width="220"
 							height="110"
 							data={
-								'https://www.metaweather.com/static/img/weather/' +
+								"https://www.metaweather.com/static/img/weather/" +
 								consolidated_weather[0].weather_state_abbr +
-								'.svg'
+								".svg"
 							}
-							type="image/svg+xml"
-						>
+							type="image/svg+xml">
 							somthing
 						</object>
-					</Col>{' '}
+					</Col>
 					<Col className="mt-5">
-						{' '}
-						<h4 clasName="textH4">Today</h4>
-						<h3>{consolidated_weather[0].the_temp.toFixed(2)} &#xb0;C</h3>{' '}
+						<h4 className="textH4">Today</h4>
+						<h3>{consolidated_weather[0].the_temp.toFixed(2)} &#xb0;C</h3>
 					</Col>
 				</Row>
 			</Container>
 		</div>
-	);
+	)
 }
