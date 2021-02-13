@@ -1,4 +1,5 @@
-# Weather App ☀️🌤⛅️🌥🌦
+ Weather Forecast App
+ ☀️🌤⛅️🌥🌦
 
 The best weather app you will ever see ! now you can know every single detail about the weather before your picnic we will even tell you about
 the wind speed 🌬 in your location.
@@ -17,6 +18,10 @@ for every single weather status you will see a nice background that describe how
 
 ![weather-3](weather-3.png) <br><br>
 
+## Live Demo
+View the [live demo](https://)!
+
+
 ## Site Map
 
 - the first thing you will see when you open the site is the search bar on the top left. here you can choose the city you want to see it's weather.<br>
@@ -31,10 +36,26 @@ for every single weather status you will see a nice background that describe how
 2-you will see a default city. search for your city.<br>
 3-you will see today's weather for your city navigate down to see weekly forecast.<br>
 
-## Technology
+### Built With
+- [React ](https://reactjs.org/)- A JavaScript library for building user interfaces
 
-This app used React Js and MetaWeather api
 
-## Contributors
+### Dependencies
+
+- Node: [http://nodejs.org/](http://nodejs.org/)
+- React-Bootstrap: [https://react-bootstrap.github.io/](https://react-bootstrap.github.io/)
+- Axios: [https://www.npmjs.com/package/react-axios/](https://www.npmjs.com/package/react-axios/)
+- ReactJS: [https://reactjs.org](https://reactjs.org)
+
+
+### Contributors
 
 This app is developed by c++ Team
+
+### Initial Set Up
+
+1. Clone the repository
+2. `npm install` or `yarn`
+3. `npm start` or `yarn start` app start with your port number
+-------------------------------------------------------------------
+
