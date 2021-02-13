@@ -19,7 +19,7 @@ for every single weather status you will see a nice background that describe how
 ![weather-3](weather-3.png) <br><br>
 
 ## Live Demo
-View the [live demo](https://)!
+View the [live demo](https://weatherapp-cpp-team.netlify.app/)!
 
 
 ## Site Map
