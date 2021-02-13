@@ -11,7 +11,7 @@ export default function StatusBar(props) {
 	} = props.currentWeth.consolidated_weather[0];
 	return (
 		<div>
-			<Container className="mt-3">
+			<Container className="mt-1">
 				<Row xs={2} md={4} lg={5}>
 					<Col>Humidity: {humidity}</Col>
 					<Col>Pressure: {air_pressure}</Col>

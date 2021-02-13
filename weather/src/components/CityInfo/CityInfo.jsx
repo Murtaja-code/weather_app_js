@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Row, Col, Button, Container, Spinner } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 
 export default function CityInfo(props) {
 	const { consolidated_weather, title } = props.currentWeth;
@@ -30,8 +30,8 @@ export default function CityInfo(props) {
 					<Col>
 						<object
 							className="mt-3"
-							width="200"
-							height="100"
+							width="220"
+							height="110"
 							data={
 								'https://www.metaweather.com/static/img/weather/' +
 								consolidated_weather[0].weather_state_abbr +
@@ -42,7 +42,7 @@ export default function CityInfo(props) {
 							somthing
 						</object>
 					</Col>{' '}
-					<Col className="mt-4">
+					<Col className="mt-5">
 						{' '}
 						<h4 clasName="textH4">Today</h4>
 						<h3>{consolidated_weather[0].the_temp.toFixed(2)} &#xb0;C</h3>{' '}
