@@ -19,9 +19,9 @@ for every single weather status you will see a nice background that describe how
 
 ## Site Map
 
--the first thing you will see when you open the site is the search bar on the top left. here you can choose the city you want to see it's weather.<br>
--after the search there is the status bar which gives you a brief of important weather information. <br><br>
--then we have the city, weather forecast and time. <br><br>
+- the first thing you will see when you open the site is the search bar on the top left. here you can choose the city you want to see it's weather.<br>
+- after the search there is the status bar which gives you a brief of important weather information. <br><br>
+- then we have the city, weather forecast and time. <br><br>
 
 - the last thing is the weekly forecast of the weather <br><br>
 
