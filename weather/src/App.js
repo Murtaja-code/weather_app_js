@@ -3,7 +3,7 @@ import WeatherData from "./containers/WeatherData/WeatherData"
 
 function App() {
 	return (
-		<div fluid={true} className="App">
+		<div className="App">
 			<WeatherData />
 		</div>
 	)
