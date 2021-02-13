@@ -2,7 +2,7 @@ import React from "react"
 import { Row, Col, Container } from "react-bootstrap"
 
 export default function CityInfo(props) {
-	const { consolidated_weather, title } = props.currentWeth
+	const { consolidated_weather, title, sun_rise, sun_set } = props.currentWeth
 	return (
 		<div>
 			<Container>
@@ -15,12 +15,17 @@ export default function CityInfo(props) {
 							}
 						</h3>
 					</Col>
+
 					<Col md={{ span: 4, offset: 5 }}>
 						<h3 className="mt-5">
-							{
-								(consolidated_weather[0].applicable_date = new Date().toTimeString())
-							}
+							{new Date(
+								consolidated_weather[0].applicable_date
+							).toLocaleTimeString()}
 						</h3>
+						<p>
+							sunrise: {new Date(sun_rise).toLocaleTimeString()} <br />
+							sunset: {new Date(sun_set).toLocaleTimeString()}
+						</p>
 					</Col>
 				</Row>
 			</Container>
