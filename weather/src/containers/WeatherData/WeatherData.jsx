@@ -22,6 +22,15 @@ export default function WeatherData() {
 	const [error, setError] = useState()
 	const location = useRef()
 	const [woeid, setWoeid] = useState(1979455)
+	const weekday = [
+		"Sunday",
+		"Monday",
+		"Tuesday",
+		"Wednesday",
+		"Thursday",
+		"Friday",
+		"Saturday"
+	]
 
 	useEffect(() => {
 		function requestData() {
@@ -71,6 +80,9 @@ export default function WeatherData() {
 	}
 	const forecastData = forcasttWeth.consolidated_weather.map((weather, i) => (
 		<Container className="mt-5" key={i}>
+			<Row className="mt-3 mb-2">
+				<Col>{weekday[new Date(weather.applicable_date).getDay()]}</Col>
+			</Row>
 			<Row>
 				<Col>
 					<object
@@ -116,34 +128,32 @@ export default function WeatherData() {
 		backgroundImage: `url(${backgroundImage()})`
 	}
 	return (
-		<Container fluid={true} className="img" style={sectionStyle}>
-			{/* components come here */}
-			<Container className="transbox">
-				<CityInfo currentWeth={currentWeth} />
+		<Container fluid className="img" style={sectionStyle}>
+			<Form className="pb-2">
+				<Row noGutters className="justify-content-md-left">
+					<Col sm="2">
+						<Form.Control
+							ref={location}
+							size="sm"
+							type="search"
+							placeholder="type the city..."
+						/>
+					</Col>
+					<Col md="auto">
+						<Button
+							variant="success"
+							size="sm"
+							type="submit"
+							onClick={getLocation}>
+							search
+						</Button>
+					</Col>
+				</Row>
+			</Form>
+			<Container className="transbox mt-2">
 				<StatusBar currentWeth={currentWeth} />
-
+				<CityInfo currentWeth={currentWeth} />
 				<WeeklyForecast forecastWeather={forecastData} />
-				<Form>
-					<Row noGutters className="justify-content-md-center">
-						<Col sm="2">
-							<Form.Control
-								ref={location}
-								size="sm"
-								type="search"
-								placeholder="type the city..."
-							/>
-						</Col>
-						<Col md="auto">
-							<Button
-								variant="outline-success"
-								size="sm"
-								type="submit"
-								onClick={getLocation}>
-								search
-							</Button>
-						</Col>
-					</Row>
-				</Form>
 			</Container>
 		</Container>
 	)
